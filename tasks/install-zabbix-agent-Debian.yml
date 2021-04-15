@@ -9,7 +9,7 @@
 - name: "Reload Facts"
   setup:
     gather_subset: "min,local"
-  become: True
+  become: true
 - name: "Add zabbix repo key"
   apt_key:
     url: "{{ zabbix_repo_key }}"
