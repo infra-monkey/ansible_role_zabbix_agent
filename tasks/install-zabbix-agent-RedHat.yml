@@ -11,6 +11,6 @@
 - name: "Install required packages"
   package:
     name: "{{ pkglist }}"
-    state: latest
+    state: present
   become: true
 ...
