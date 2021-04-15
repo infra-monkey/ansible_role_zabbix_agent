@@ -1,0 +1,5 @@
+---
+is_zabbix_agent: False
+is_agent2: True
+zabbix_version: "5.2"
+...

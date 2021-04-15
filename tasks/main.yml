@@ -1,0 +1,17 @@
+---
+- name: "Include os specific variables"
+  include_vars: "vars-{{ ansible_lsb.id }}-{{ ansible_lsb.major_release }}.yml"
+  when: is_zabbix_agent and ansible_lsb.id is defined
+- name: "Include os specific variables"
+  include_vars: "vars-{{ ansible_distribution_file_variety }}-{{ ansible_distribution_major_version }}.yml"
+  when: is_zabbix_agent and ansible_lsb.id is not defined
+- name: "Call install-zabbix-agent task for RedHat like systems"
+  include_tasks: install-zabbix-agent-RedHat.yml
+  when: ansible_distribution_file_variety == "RedHat" and is_zabbix_agent
+- name: "Call install-zabbix-agent task for Debian like systems"
+  include_tasks: install-zabbix-agent-Debian.yml
+  when: ansible_distribution_file_variety == "Debian" and is_zabbix_agent
+- name: "Call configure-zabbix-agent task"
+  include_tasks: configure-zabbix-agent.yml
+  when: is_zabbix_agent
+...

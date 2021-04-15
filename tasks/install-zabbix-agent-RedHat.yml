@@ -1,0 +1,16 @@
+---
+- name: "Enable Zabbix yum repository"
+  yum_repository:
+    name: zabbix
+    description: "Zabbix repository"
+    file: "zabbix"
+    baseurl: "{{ repo_url }}"
+    gpgcheck: True
+    gpgkey: "{{ zabbix_rpm_gpg_key }}"
+  become: True
+- name: "Install required packages"
+  package:
+    name: "{{ pkglist }}"
+    state: latest
+  become: True
+...

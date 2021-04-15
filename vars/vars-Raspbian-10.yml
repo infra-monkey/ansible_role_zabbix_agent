@@ -1,0 +1,9 @@
+---
+repo_url: "http://repo.zabbix.com/zabbix/{{ zabbix_version }}/raspbian"
+repo_release: "buster"
+zabbix_repo_key: "https://repo.zabbix.com/zabbix-official-repo.key"
+repo_arch: "armhf"
+pkglist:
+  - zabbix-agent
+is_agent2: False
+...

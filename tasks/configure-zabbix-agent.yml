@@ -1,0 +1,22 @@
+---
+- name: "Set zabbix-agent2 configuration file"
+  template:
+    src: "zabbix_agent2.conf.j2"
+    dest: "/etc/zabbix/zabbix_agent2.conf"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  become: True
+  when: is_agent2
+  notify: "restart zabbix-agent2"
+- name: "Set zabbix-agent configuration file"
+  template:
+    src: "zabbix_agentd.conf.j2"
+    dest: "/etc/zabbix/zabbix_agentd.conf"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  become: True
+  when: not is_agent2
+  notify: "restart zabbix-agent"
+...
