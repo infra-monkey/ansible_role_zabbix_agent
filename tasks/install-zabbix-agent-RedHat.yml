@@ -5,12 +5,12 @@
     description: "Zabbix repository"
     file: "zabbix"
     baseurl: "{{ repo_url }}"
-    gpgcheck: True
+    gpgcheck: true
     gpgkey: "{{ zabbix_rpm_gpg_key }}"
-  become: True
+  become: true
 - name: "Install required packages"
   package:
     name: "{{ pkglist }}"
     state: latest
-  become: True
+  become: true
 ...

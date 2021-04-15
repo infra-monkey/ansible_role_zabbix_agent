@@ -3,18 +3,18 @@
   apt_key:
     url: "{{ zabbix_repo_key }}"
     state: present
-  become: True
+  become: true
 - name: "Enable Zabbix repos"
   apt_repository:
     repo: "deb [arch={{ repo_arch }}] {{ repo_url }} {{ ansible_lsb.codename }} main"
     state: present
     filename: "zabbix"
-  become: True
+  become: true
 - name: "Install required packages"
   apt:
     name: "{{ pkglist }}"
-    update_cache: True
-    autoremove: True
+    update_cache: true
+    autoremove: true
     state: latest
-  become: True
+  become: true
 ...
