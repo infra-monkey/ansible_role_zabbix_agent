@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: zabbix_agent
+  namespace: infra_monkey
+  author: Antoine Gatineau
+  description: Configure a zabbix agent
+  company: Infra-Monkey
+  license: Apache-2.0
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+        - 8
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+  galaxy_tags: []
+dependencies: []
+...

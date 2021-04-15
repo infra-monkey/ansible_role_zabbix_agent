@@ -5,5 +5,5 @@ zabbix_repo_key: "https://repo.zabbix.com/zabbix-official-repo.key"
 repo_arch: "armhf"
 pkglist:
   - zabbix-agent
-is_agent2: False
+is_agent2: false
 ...
