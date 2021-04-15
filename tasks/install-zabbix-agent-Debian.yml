@@ -6,6 +6,10 @@
     autoremove: true
     state: present
   become: true
+- name: "Reload Facts"
+  setup:
+    gather_subset: "min,local"
+  become: True
 - name: "Add zabbix repo key"
   apt_key:
     url: "{{ zabbix_repo_key }}"
