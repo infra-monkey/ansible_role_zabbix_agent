@@ -1,4 +1,11 @@
 ---
+- name: "Install dependencies packages"
+  apt:
+    name: "{{ deplist }}"
+    update_cache: true
+    autoremove: true
+    state: present
+  become: true
 - name: "Add zabbix repo key"
   apt_key:
     url: "{{ zabbix_repo_key }}"
