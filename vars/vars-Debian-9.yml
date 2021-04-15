@@ -7,4 +7,5 @@ pkglist:
   - zabbix-agent2
 deplist:
   - gpg
+  - lsb-release
 ...
