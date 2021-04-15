@@ -5,4 +5,7 @@ zabbix_repo_key: "https://repo.zabbix.com/zabbix-official-repo.key"
 repo_arch: "amd64"
 pkglist:
   - zabbix-agent2
+deplist:
+  - gpg
+  - lsb-release
 ...

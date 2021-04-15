@@ -1,20 +1,31 @@
 ---
+- name: "Install dependencies packages"
+  apt:
+    name: "{{ deplist }}"
+    update_cache: true
+    autoremove: true
+    state: present
+  become: true
+- name: "Reload Facts"
+  setup:
+    gather_subset: "min,local"
+  become: true
 - name: "Add zabbix repo key"
   apt_key:
     url: "{{ zabbix_repo_key }}"
     state: present
-  become: True
+  become: true
 - name: "Enable Zabbix repos"
   apt_repository:
     repo: "deb [arch={{ repo_arch }}] {{ repo_url }} {{ ansible_lsb.codename }} main"
     state: present
     filename: "zabbix"
-  become: True
+  become: true
 - name: "Install required packages"
   apt:
     name: "{{ pkglist }}"
-    update_cache: True
-    autoremove: True
-    state: latest
-  become: True
+    update_cache: true
+    autoremove: true
+    state: present
+  become: true
 ...
