@@ -1,5 +1,5 @@
 ---
-repo_url: "http://repo.zabbix.com/zabbix/{{ zabbix_version }}debian"
+repo_url: "http://repo.zabbix.com/zabbix/{{ zabbix_version }}/debian"
 repo_release: "stretch"
 zabbix_repo_key: "https://repo.zabbix.com/zabbix-official-repo.key"
 repo_arch: "amd64"
