@@ -7,10 +7,8 @@
     baseurl: "{{ repo_url }}"
     gpgcheck: true
     gpgkey: "{{ zabbix_rpm_gpg_key }}"
-  become: true
 - name: "Install required packages"
   package:
     name: "{{ pkglist }}"
     state: present
-  become: true
 ...
