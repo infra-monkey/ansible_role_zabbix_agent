@@ -6,7 +6,6 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  become: true
   when: is_agent2
   notify: "restart zabbix-agent2"
 - name: "Set zabbix-agent configuration file"
@@ -16,7 +15,6 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  become: true
   when: not is_agent2
   notify: "restart zabbix-agent"
 ...
