@@ -1,5 +1,4 @@
 ---
 zabbix_server_host: "zabbix.example.com"
-is_agent2: true
 zabbix_version: "5.2"
 ...
