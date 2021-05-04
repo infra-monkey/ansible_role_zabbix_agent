@@ -5,6 +5,7 @@
     update_cache: true
     autoremove: true
     state: present
+  when: deplist is defined
 - name: "Reload Facts"
   setup:
     gather_subset: "min,local"
