@@ -3,6 +3,7 @@
   hosts: all
   connection: local
   become: true
-
+  vars:
+    zabbix_version: "5.4"
   roles:
     - role: "infra_monkey.zabbix_agent"
