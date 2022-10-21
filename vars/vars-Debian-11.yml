@@ -9,4 +9,3 @@ pkglist:
 deplist:
   - gpg
   - lsb-release
-...

@@ -1,12 +1,11 @@
 ---
-- name: "restart zabbix-agent2"
-  service:
+- name: "Restart zabbix-agent2"
+  ansible.builtin.service:
     name: "zabbix-agent2"
     state: restarted
     enabled: true
-- name: "restart zabbix-agent"
-  service:
+- name: "Restart zabbix-agent"
+  ansible.builtin.service:
     name: "zabbix-agent"
     state: restarted
     enabled: true
-...
