@@ -1,6 +1,6 @@
 ---
 - name: "Enable Zabbix yum repository"
-  yum_repository:
+  ansible.builtin.yum_repository:
     name: zabbix
     description: "Zabbix repository"
     file: "zabbix"
@@ -8,7 +8,6 @@
     gpgcheck: true
     gpgkey: "{{ zabbix_rpm_gpg_key }}"
 - name: "Install required packages"
-  package:
+  ansible.builtin.package:
     name: "{{ pkglist }}"
     state: present
-...

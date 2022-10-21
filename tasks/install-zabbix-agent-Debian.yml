@@ -1,27 +1,26 @@
 ---
 - name: "Install dependencies packages"
-  apt:
+  ansible.builtin.apt:
     name: "{{ deplist }}"
     update_cache: true
     autoremove: true
     state: present
   when: deplist is defined
 - name: "Reload Facts"
-  setup:
+  ansible.builtin.setup:
     gather_subset: "min,local"
 - name: "Add zabbix repo key"
-  apt_key:
+  ansible.builtin.apt_key:
     url: "{{ zabbix_repo_key }}"
     state: present
 - name: "Enable Zabbix repos"
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch={{ repo_arch }}] {{ repo_url }} {{ ansible_lsb.codename }} main"
     state: present
     filename: "zabbix"
 - name: "Install required packages"
-  apt:
+  ansible.builtin.apt:
     name: "{{ pkglist }}"
     update_cache: true
     autoremove: true
     state: present
-...

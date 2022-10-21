@@ -1,6 +1,6 @@
 ---
 - name: "Set zabbix-agent2 configuration file"
-  template:
+  ansible.builtin.template:
     src: "zabbix_agent2.conf.j2"
     dest: "/etc/zabbix/zabbix_agent2.conf"
     owner: "root"
@@ -9,7 +9,7 @@
   when: is_agent2
   notify: "restart zabbix-agent2"
 - name: "Set zabbix-agent configuration file"
-  template:
+  ansible.builtin.template:
     src: "zabbix_agentd.conf.j2"
     dest: "/etc/zabbix/zabbix_agentd.conf"
     owner: "root"
@@ -17,4 +17,3 @@
     mode: "0644"
   when: not is_agent2
   notify: "restart zabbix-agent"
-...

@@ -6,7 +6,7 @@ galaxy_info:
   description: Configure a zabbix agent
   company: Infra-Monkey
   license: Apache-2.0
-  min_ansible_version: "2.4"
+  min_ansible_version: "2.10"
   platforms:
     - name: EL
       versions:
