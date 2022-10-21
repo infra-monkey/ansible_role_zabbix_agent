@@ -4,4 +4,3 @@ zabbix_rpm_gpg_key: "https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591"
 is_agent2: true
 pkglist:
   - zabbix-agent2
-...

@@ -1,12 +1,4 @@
 ---
-- name: "Debug"
-  ansible.builtin.debug:
-    msg: "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}"
-  when: ansible_lsb.id is not defined
-- name: "Debug"
-  ansible.builtin.debug:
-    msg: "{{ ansible_lsb.id }}-{{ ansible_lsb.major_release }}"
-  when: ansible_lsb.id is defined
 - name: "Include os specific variables"
   ansible.builtin.include_vars: "vars-{{ ansible_lsb.id }}-{{ ansible_lsb.major_release }}.yml"
   when: ansible_lsb.id is defined

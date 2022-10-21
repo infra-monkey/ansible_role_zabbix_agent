@@ -1,8 +1,0 @@
----
-repo_url: "http://repo.zabbix.com/zabbix/{{ zabbix_version }}/rhel/9/x86_64/"
-zabbix_rpm_gpg_key: "https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591"
-repo_gpg_check: false
-is_agent2: true
-pkglist:
-  - zabbix-agent2
-...
