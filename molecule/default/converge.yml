@@ -4,6 +4,6 @@
   connection: local
   become: true
   vars:
-    zabbix_version: "6.3"
+    zabbix_version: "6.2"
   roles:
     - role: "infra_monkey.zabbix_agent"
