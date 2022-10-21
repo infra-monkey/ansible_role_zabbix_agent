@@ -5,7 +5,7 @@
     description: "Zabbix repository"
     file: "zabbix"
     baseurl: "{{ repo_url }}"
-    gpgcheck: true
+    gpgcheck: "{{ repo_gpg_check | default(true) }}"
     gpgkey: "{{ zabbix_rpm_gpg_key }}"
 - name: "Install required packages"
   ansible.builtin.package:
